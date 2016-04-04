@@ -3,6 +3,51 @@ class CommentsController < ApplicationController
 
 	skip_before_action :verify_authenticity_token
 
+=begin
+  :method: new
+  <b>Common Name</b> Post a new Comment<br>
+  <b>Short Description</b> Creates a new Comment<br>
+  <b>Endpoints</b> Web<br>
+  <b>Request Type</b> POST<br>
+  <b>Route </b> /comments/<br>
+  <b>Authentication Required</b> Public<br>
+  <b>Request Format</b>
+    {
+	  "paragraph_id": 2
+	  "body": "That makes no sense at all"
+	}
+  <b>Response Format</b> A json array containing list of society objects<br>
+    {
+		"status": "OK",
+		"message": "success",
+		"result": {
+			"id": 1,
+			"title": "First Post Ever",
+			"paras": [{
+				"id": 1,
+				"body": "This is the first post ever."
+			}, {
+				"id": 2,
+				"body": "It's a great post because it has multiple paragraphs."
+			}, {
+				"id": 3,
+				"body": "Most of them are separated by 2 newlines.\nBut some are not."
+			}, {
+				"id": 4,
+				"body": "Some are separated by more."
+			}, {
+				"id": 5,
+				"body": "Enough of this.\n"
+			}],
+			"comments": [{
+				"id": 2,
+				"body": "That makes no sense at all",
+				"para_id": 2
+			}]
+		}
+	}
+  <b>Revision history</b><br>
+=end
 	def new
 		para = Posts::Paragraph.find_by(id:params[:paragraph_id])
 		if para.present?
