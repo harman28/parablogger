@@ -1,5 +1,8 @@
 ## Parablogger
 
+ - You'll need Bundler and Postgres installed. Make sure your postgres user has the right permissions to setup DB.
+ - Run `INSTALL.sh`
+
 Here's a list of the usable APIs in this repo. Slightly more detailed documentation can be found in the `doc/` folder.
 
 ###Create Post
@@ -47,7 +50,8 @@ Here's a list of the usable APIs in this repo. Slightly more detailed documentat
 
 **Short Description** Returns compact posts in paginated form  
 **HTTP Verb** GET  
-**Route** `/posts/`  
+**Route** `/posts`  
+**Request Format** `/posts?page=1&limit=2`  
 **Response Format**  
 ````JSON
 	{
