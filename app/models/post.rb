@@ -14,7 +14,9 @@ class Post < ActiveRecord::Base
 
 	def self.select_nested_paragraphs
 		joins(:paragraphs).group(:id)
-		.select("json_agg(json_build_object('id',posts_paragraphs.id,'body',posts_paragraphs.body)) as paras")
+		.select("json_agg(json_build_object('id', posts_paragraphs.id,
+											'order_id', posts_paragraphs.order_id,
+											'body', posts_paragraphs.body)) as paras")
 	end
 
 	def comments

@@ -53,18 +53,23 @@ class PostsController < ApplicationController
 			"title": "First Post Ever",
 			"paras": [{
 				"id": 1,
+				"order_id": 0
 				"body": "This is the first post ever."
 			}, {
 				"id": 2,
+				"order_id": 1
 				"body": "It's a great post because it has multiple paragraphs."
 			}, {
 				"id": 3,
+				"order_id": 2
 				"body": "Most of them are separated by 2 newlines.\nBut some are not."
 			}, {
 				"id": 4,
+				"order_id": 3
 				"body": "Some are separated by more."
 			}, {
 				"id": 5,
+				"order_id": 4
 				"body": "Enough of this.\n"
 			}],
 			"comments": [{
@@ -110,18 +115,23 @@ class PostsController < ApplicationController
 			"title": "First Post Ever",
 			"paras": [{
 				"id": 1,
+				"order_id": 0
 				"body": "This is the first post ever."
 			}, {
 				"id": 2,
+				"order_id": 1
 				"body": "It's a great post because it has multiple paragraphs."
 			}, {
 				"id": 3,
+				"order_id": 2
 				"body": "Most of them are separated by 2 newlines.\nBut some are not."
 			}, {
 				"id": 4,
+				"order_id": 3
 				"body": "Some are separated by more."
 			}, {
 				"id": 5,
+				"order_id": 4
 				"body": "Bas.\n"
 			}],
 			"comments": []
@@ -136,8 +146,8 @@ class PostsController < ApplicationController
 				body = params[:body]
 				para_array = body.gsub(/\n\n(\n)+/,"\n\n").split("\n\n")
 				insert_list = []
-				para_array.map do |para| 
-					insert_list << Posts::Paragraph.new(body:para, post_id:post.id) 
+				para_array.each_with_index do |para,index|
+					insert_list << Posts::Paragraph.new(body:para, post_id:post.id, order_id:index)
 				end
 				Posts::Paragraph.import insert_list
 				result = post.compact

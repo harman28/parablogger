@@ -25,18 +25,23 @@ class CommentsController < ApplicationController
 			"title": "First Post Ever",
 			"paras": [{
 				"id": 1,
+				"order_id": 0
 				"body": "This is the first post ever."
 			}, {
 				"id": 2,
+				"order_id": 1
 				"body": "It's a great post because it has multiple paragraphs."
 			}, {
 				"id": 3,
+				"order_id": 2
 				"body": "Most of them are separated by 2 newlines.\nBut some are not."
 			}, {
 				"id": 4,
+				"order_id": 3
 				"body": "Some are separated by more."
 			}, {
 				"id": 5,
+				"order_id": 4
 				"body": "Enough of this.\n"
 			}],
 			"comments": [{
