@@ -1,9 +1,10 @@
 class Post < ActiveRecord::Base
 	has_many :paragraphs, class_name: '::Posts::Paragraph', dependent: :destroy
+	validates :title, presence: true
 
 	def compact
 		post = Post.select_nested_paragraphs.select_compact.find_by(id:self.id).as_json
-		post.merge({ "comments": comments.as_json })
+		post.merge({ "comments" => comments.as_json })
 	end
 
 	def self.select_compact

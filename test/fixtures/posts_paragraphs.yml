@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  body: "This is the first post ever."
+  order_id: 0
+  post_id: 1
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+two:
+  id: 2
+  body: "It's a great post because it has multiple paragraphs."
+  order_id: 1
+  post_id: 1
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+three:
+  id: 3
+  body: "Most of them are separated by 2 newlines.\nBut some are not."
+  order_id: 2
+  post_id: 1
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+four:
+  id: 4
+  body: "Some are separated by more."
+  order_id: 3
+  post_id: 1
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+five:
+  id: 5
+  body: "Enough of this.\n"
+  order_id: 4
+  post_id: 1
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+six:
+  id: 6
+  body: "This is the second post."
+  order_id: 0
+  post_id: 2
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
+
+seven:
+  id: 7
+  body: "It's not quite as good."
+  order_id: 1
+  post_id: 2
+  created_at: '2016-04-11 07:22:55'
+  updated_at: '2016-04-11 07:22:55'
