@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 	end
 
 	def self.select_compact
-		select(:id,:title)
+		select(:id,:title,"'hello' as hello")
 	end
 
 	private
