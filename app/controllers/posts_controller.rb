@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 			"id": 2,
 			"title": "Second Post"
 		}]
-	}			
+	}
   <b>Revision history</b><br>
 =end
 	def index
